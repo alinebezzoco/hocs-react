@@ -4,10 +4,10 @@ const aline = lazy(() => import('./pages/users/aline'));
 const elixir = lazy(() => import('./pages/users/elixir'));
 const Home = lazy(() => import('./pages/home/home'));
 
-const Main = () => (
+const Routes = () => (
   <main>
     <Switch>
-        <Suspense fallback={ <h1>Rendering...</h1> }>
+        <Suspense fallback={ <h1>Carregando...</h1> }>
         <Route path="/" component={ Home } />
         <Route path="/aline" component={ aline } />
         <Route path="/elixir" component={ elixir } />
@@ -16,4 +16,4 @@ const Main = () => (
   </main>
 )
 
-export default Main
+export default Routes

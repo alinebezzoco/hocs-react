@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import Main from './Main';
+import React, { Component } from 'react';
+import Routes from './Routes';
 
 class App extends Component {
 
@@ -7,7 +7,7 @@ class App extends Component {
     return(
       <div className="App">
         <div id="page-wrap" className="container">
-          <Main/>
+          <Routes/>
           {this.props.children}
         </div>
       </div>
