@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import { Switch, Route } from 'react-router-dom';
-import aline from './pages/users/aline';
-import elixir from './pages/users/elixir';
-import Home from './pages/home/home';
+const aline = lazy(() => import('./pages/users/aline'));
+const elixir = lazy(() => import('./pages/users/elixir'));
+const Home = lazy(() => import('./pages/home/home'));
 
 const Main = () => (
   <main>
     <Switch>
-        <Route exact path="/" component={ Home } />
+        <Suspense fallback={ <h1>Rendering...</h1> }>
+        <Route path="/" component={ Home } />
         <Route path="/aline" component={ aline } />
         <Route path="/elixir" component={ elixir } />
+        </Suspense>
     </Switch>
   </main>
 )

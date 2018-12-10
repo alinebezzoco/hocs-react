@@ -21,4 +21,4 @@ const RepoList = ({ repoData }) => {
     )
 }
 
-export default withRepoData(RepoList, 'elixir');
+export default withRepoData(RepoList, 'elixir-lang');
